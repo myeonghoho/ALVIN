@@ -15,7 +15,7 @@
         <title>ALVIN and SUPERBAND</title>
 
         <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="/static/assets/logo/favicon.png"/>
+		<link rel="shortcut icon" type="image/icon" href="/static/assets/logo/logo.jpg"/>
        
         <!--font-awesome.min.css-->
         <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
@@ -96,7 +96,7 @@
                             <div class="container">
                                 <div class="two_third first" style="height:800px">
                                 <div class="col-lg-6">
-                                    <h2 class="font-weight-bold text-primary heading">자유게시판</h2>
+                                    <h2 class="font-weight-bold text-primary heading text-center">자유게시판</h2>
                                     <hr/><br><br>
                                         <!--검색창-->    
                                         <div id="board-search">
@@ -107,8 +107,8 @@
                                                         <label for="search" class="blind">공지사항 내용 검색</label>
                                                         <input type=text size=45 class="input-sm" id="fd" name="fd" placeholder="검색어를 입력해주세요.">
                                                         <button type="submit" class="btn btn-dark">검색</button>
-                                                        <br><br>
-                                                        <button type="submit" class="btn btn-dark">로그인</button>
+                                                        
+                                                    
                                                     </div><!--search-wrap-->
                                                 </form>
                                             </div><!--search-window-->
@@ -125,9 +125,7 @@
                                                     <th width="5%" class="text-center">번호</th>
                                                     <th width="35%" class="text-center">제목</th>
                                                     <th width="15%" class="text-center">이름</th>
-                                                    <th width="15%" class="text-center">아이디</th>
                                                     <th width="17%" class="text-center">작성일</th>
-                                                    <th width="13%" class="text-center">조회수</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -140,10 +138,8 @@
                                                             (${vo.rcount })
                                                         </c:if>
                                                     </td>
-                                                    <td width="15%" class="text-center">${vo.id }</td>
                                                     <td width="15%" class="text-center">${vo.name }</td>
                                                     <td width="17%" class="text-center">${vo.dbday }</td>
-                                                    <td width="13%" class="text-center">${vo.hit }</td>
                                                 </tr>
                                                 </c:forEach>
                                                 </tbody>
@@ -154,7 +150,7 @@
                                                     <td>
                                                     <c:if test="${sessionScope.id!=null }">
                                                         <div class="wrap">
-                                                            <a href="" class="button">글쓰기</a>
+                                                            <a href="{%url 'users:post_add' %}" class="button">글쓰기</a>
                                                             
                                                         </div>
                                                     </c:if>
