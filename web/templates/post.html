@@ -120,29 +120,42 @@
                                     <div id="board-list">
                                         <div class="container">
                                             <table class="table" id="user-table">
-                                                <thead>
+                                                <!--<thead>
                                                 <tr>
                                                     <th width="5%" class="text-center">번호</th>
                                                     <th width="35%" class="text-center">제목</th>
                                                     <th width="15%" class="text-center">이름</th>
                                                     <th width="17%" class="text-center">작성일</th>
                                                 </tr>
-                                                </thead>
-                                                <tbody>
+                                                </thead>-->
+                                                <div id="post-list">
+                                                    <ul class="posts">
+                                                        {% for post in posts %}
+                                                        <li class="post">
+                                                            <!-- 각각의 제목과 내용을 나누어 표시 -->
+                                                            <h2><a href="">{{ post.title }}</a></h2>
+                                    
+                                                            <p>{{ post.content }}</p>
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                                
+                                                <!--<tbody>
                                                 <c:forEach var="vo" items="${list }">
                                                 <tr class="board_info">
-                                                    <td width="5%" class="text-center">${vo.no }</td>
-                                                    <td width="35%"><a href="../freeboard/detail.do?no=${vo.no }">${vo.subject }</a>
+                                                    <td width="5%" class="text-center">${post.id}</td>
+                                                    <td width="35%"><a href="">${post.content }</a>
                                                         &nbsp;&nbsp;
                                                         <c:if test="${vo.rcount>0 }">
-                                                            (${vo.rcount })
+                                                            (${post.rcount })
                                                         </c:if>
                                                     </td>
-                                                    <td width="15%" class="text-center">${vo.name }</td>
-                                                    <td width="17%" class="text-center">${vo.dbday }</td>
+                                                    <td width="15%" class="text-center">${post.name }</td>
+                                                    <td width="17%" class="text-center">${post.dbday }</td>
                                                 </tr>
                                                 </c:forEach>
-                                                </tbody>
+                                                </tbody>-->
                                             </table>
                                             
                                             <table>
